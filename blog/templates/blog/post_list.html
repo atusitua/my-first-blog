@@ -8,15 +8,23 @@
         </div>
 
         <div>
-            <p>published: 32.06.2021, 12:14</p>
+            <p>published: 32年6月2021日12:14</p>
             <h2><a href="">My first post</a></h2>
             <p> こんにちは！ たこやきオブディザスター </p>
         </div>
 
         <div>
-            <p>公開日: 202626/06/1250, 65:14</p>
+            <p>公開日: 202626年6月1250日65:14</p>
             <h2><a href="">22番目の投稿</a></h2>
-            <p> こんにちは！ セカオワがオワコンになったらセカオワコン！ </p>
+            <p> こんにちは！ seカオワがオワコンになったらセカオワコン！ </p>
         </div>
+
+        {% for post in posts %}
+            <div>
+                <p>公開日: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
